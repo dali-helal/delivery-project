@@ -1,0 +1,160 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline :2.5rem;
+    box-shadow: 0px 0px 1px;
+    .logo{
+        cursor: pointer;
+    }
+   
+    .container {
+        display: flex;
+        align-items: center;
+        gap:0.5rem;
+        .compte-btn {
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 0px 2px;
+            padding: 0.73rem 0.6rem;
+            border-radius: 12px;
+            cursor: pointer;
+            gap:0.4rem;
+            .user-icon {
+                height: 1.3rem;
+                height: 1.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .angelDown-icon {
+                height: 1.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            p {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 300;
+                width: 75px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 15px;
+            }
+        }
+
+        .cart-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 0px 2px;
+            padding: 0.75rem 0.6rem;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 6.5rem;
+          
+            .cart-icon {
+                height: 1.4rem;
+                width: 1.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .angelDown-icon {
+                height: 1.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .quantity {
+                margin: 0 0.6rem;
+                background: #C0282E;
+                height: 1.25rem;
+                width: 1.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 15px;
+                color: white;
+                font-size: 12px;
+            }
+        }
+    }
+   
+    .mid-container{
+        display: flex;
+        align-items: center;
+        gap:0.25rem;
+        .search-bar {
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 0px 2px;
+            border-radius: 12px;
+    
+            .search-icon {
+                height: 1rem;
+                width: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 0.75rem;
+            }
+    
+            input {
+                padding: 0.6rem;
+                outline: none;
+                border: none;
+                width: 15rem;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+                font-size: 1rem;
+                color: #6F6F6F;
+            }
+    
+            button {
+                padding: 0.6rem 1.25rem;
+                border: none;
+                background: #C0282E;
+                color: white;
+                border-bottom-right-radius: 12px;
+                border-top-right-radius: 12px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+        .location{
+            fieldset{
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0.35rem 1rem;
+                border-radius: 12px;
+                outline: none;
+                margin-bottom: 0.4rem;
+                .icon-map{
+                    height: 1rem;
+                    width: 1rem;
+                    display: flex;
+                    align-items: center;
+                    margin:  0.2rem;
+                }
+                p{
+                    font-family: 'Poppins', sans-serif;
+                    width: 120px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 12px;
+                    margin-left:  0.5rem;
+                }
+            }
+        }
+    }
+}
