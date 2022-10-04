@@ -2,7 +2,6 @@ import Logo from "../assets/logo.png"
 import { FaSearch, FaUserAlt, FaAngleDown, FaCartPlus, FaMapMarkerAlt } from "react-icons/fa"
 const Nav = () => {
 
-
   return (
     <nav>
       <div className="logo">

@@ -1,0 +1,131 @@
+.restaurant-details {
+    .nav {
+        background: white;
+        z-index: 999;
+    }
+
+    .img-restaurant {
+        width: 98vw;
+        height: 80vh;
+        margin-bottom: 6rem;
+        padding-inline: 1vw;
+    }
+
+    .section-interne {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding-inline: 2.5vw;
+        margin-top: 4rem;
+        
+        .categorie-list {
+            width: 22vw;
+            position: sticky;
+            top: 18vh;
+            a{
+                text-decoration: none;
+            }
+            h2{
+                box-shadow: 0px 0px 1px;
+                padding: 0.5rem 0.8rem;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+                font-size: 15px;
+                color: black;
+            }
+            h2:hover{
+                background: #CE1126;
+                color: white;
+            }
+        }
+            .container{
+                
+            }
+        .foods-list {
+            margin-bottom: 2rem;
+            .categorie-name {
+                width: 35vw;
+                height: 30vh;
+                background: #1D1D1D;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 700;
+                font-size: 3rem;
+                color: white;
+            }
+
+            .container-food {
+                width: 35vw;
+                height: 20vh;
+                box-shadow: 0px 0px 2px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-inline: 2rem;
+
+                .food-details {
+
+                    p {
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 700;
+                        font-size: 1rem;
+                    }
+
+                    h4 {
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                        color: #FFAA32;
+                    }
+
+                    h5 {
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                    }
+
+                }
+
+                button {
+                    font-size: 0.65rem;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    padding: 0.35rem 0.45rem;
+                    background: none;
+                    color: #CE1126;
+                    cursor: pointer;
+                    border-radius: 5px;
+                   border: none;
+                   box-shadow: 0px 0px 2px ;
+                }
+            }
+
+        }
+
+        .container-cart {
+            width: 25vw;
+            position: sticky;
+            top: 18vh;
+            p {
+                height: 10vh;
+                width: 25vw;
+                background: #1D1D1D;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                font-size: 1rem;
+                color: white;
+            }
+            .ShoppingBasket{
+                width: 25vw;
+                height: 15vw;
+                margin-top: 3vw;
+                color: #888888;
+            }
+        }
+    }
+}

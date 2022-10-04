@@ -4,6 +4,9 @@ nav {
     justify-content: space-between;
     padding-inline :2.5rem;
     box-shadow: 0px 0px 1px;
+    position: sticky;
+    top:0px;
+    background: white;
     .logo{
         cursor: pointer;
     }
@@ -85,7 +88,6 @@ nav {
             }
         }
     }
-   
     .mid-container{
         display: flex;
         align-items: center;

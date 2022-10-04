@@ -8,5 +8,15 @@
     user-select: none;
 }
 
+html{
+    scroll-padding-top: 100px;
+}
+
+a{
+    text-decoration: none;
+}
+
 @import "./home.scss";
-@import "./nav.scss"
+@import "./nav.scss";
+@import "./restaurantDetails.scss";
+@import "./foodCommand.scss";

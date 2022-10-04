@@ -1,10 +1,16 @@
-import Home from "./components/Home";
-import Nav from "./components/Nav"
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import React from "react";
+import PageAllRestaurants from "./pages/PageAllRestaurants"
+import PagerestaurantDetails from "./pages/PagerestaurantDetails"
 function App() {
   return (
     <div className="App">
-    <Nav/>
-    <Home/>
+    <BrowserRouter >
+    <Routes>
+      <Route index element ={<PageAllRestaurants/>}/>
+      <Route path="/restaurant/:id" element ={<PagerestaurantDetails />}/>
+    </Routes>
+    </BrowserRouter>
     </div>
   );
 }
