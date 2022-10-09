@@ -38,9 +38,7 @@
                 color: white;
             }
         }
-            .container{
-                
-            }
+          
         .foods-list {
             margin-bottom: 2rem;
             .categorie-name {
@@ -104,11 +102,17 @@
 
         }
 
+        .container-cart::-webkit-scrollbar {
+            width: 3px;
+          }
+
         .container-cart {
             width: 25vw;
             position: sticky;
             top: 18vh;
-            p {
+            height: 80vh;
+            overflow: auto;
+            p{
                 height: 10vh;
                 width: 25vw;
                 background: #1D1D1D;
@@ -126,6 +130,140 @@
                 margin-top: 3vw;
                 color: #888888;
             }
+            .cart{
+
+                img{
+                    width: 23vw;
+                    height: 15vw;
+                }
+                h3{
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
+            }
         }
+           .container-conmand-details{
+            margin-top: 0.75rem;
+            .command-details{
+                border-bottom: 1px solid #888888;
+                border-top: 1px solid #888888;
+                padding: 0.75rem 0px ;
+                h4{
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 600;
+                    font-size: 0.8rem;
+                    padding-inline: 0.5rem;
+                }
+                   .header{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-inline: 0.5rem;
+                      h4{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 0.75rem;
+                      }
+                      span{
+                        border: 1px solid;
+                        height: 1.25rem;
+                        width: 1.25rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        cursor: pointer;
+                      }
+                      h3{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 0.95rem;
+                      }
+                      h2{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 0.75rem;
+                      }
+                     
+                   }
+                   .list-pack-base,.list-supplement{
+                    padding-inline: 0.5rem;
+                    margin-top: 0.5rem;
+                    h3{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 0.7rem;
+                        span{
+                            color: red;
+                        }
+                    }
+                    div{
+                        span{
+                            font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 0.7rem;
+                        color: #777;
+                        margin-right: 0.25rem;
+                        }
+                    }
+                  
+                  }
+            }
+            .container-pay{
+                padding-inline :0.5rem; 
+                #div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 0.75rem 0rem;
+                    h4{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 0.85rem;
+                        color: #777;
+                    }
+                    h3{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 0.85rem;
+                        color: #777;
+                    }
+                }
+                #div-btn-commande
+                {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 0.75rem 0rem;
+                    h4{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        color: black;
+                    }
+                    h3{
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        color: black;
+                    }
+                }
+                button{
+                    width: 100%;
+                    padding: 0.75rem 0;
+                    font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                        color: white;
+                        background: #CE1126;
+                        border: none;
+                        margin-bottom: 5rem;
+                        cursor: pointer;
+                }
+            }
+           }
+       
+
     }
 }

@@ -100,23 +100,22 @@
             }
 
             .list-supplement {
-                padding: 0.35rem 1.75rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                div {
+                padding: 0.3rem 1.75rem;
+                .containerInput {
                     display: flex;
+                    justify-content: space-between;
                     align-items: center;
-
-                    input {
-                        margin-right: 0.5rem;
+                    .container-input {
+                        display: flex;
+                        align-items: center;
+                        input {
+                            margin: 0.75rem;
+                        }
                     }
-                }
-
-                span {
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 600;
+                    span {
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                    }
                 }
             }
 

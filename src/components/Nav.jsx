@@ -1,7 +1,9 @@
 import Logo from "../assets/logo.png"
 import { FaSearch, FaUserAlt, FaAngleDown, FaCartPlus, FaMapMarkerAlt } from "react-icons/fa"
-const Nav = () => {
+import { useSelector } from "react-redux"
 
+const Nav = () => {
+  const Quantity=useSelector((state)=>state.cart.cartQuantity)
   return (
     <nav>
       <div className="logo">
@@ -31,7 +33,7 @@ const Nav = () => {
         <div className="cart-btn">
           <FaCartPlus color="#6F6F6F" className="cart-icon" />
           <div className="quantity">
-            0
+            {Quantity}
           </div>
           <FaAngleDown color="#6F6F6F" className="angelDown-icon" />
         </div>

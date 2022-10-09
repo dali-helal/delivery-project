@@ -6,7 +6,7 @@ const Home = () => {
    const [isPending, setIspending] = useState(true)
 
    const FetchData = async () => {
-      const response = await fetch("https://food-delivery-react-js.herokuapp.com/api/restaurant")
+      const response = await fetch("http://localhost:4000/api/restaurant")
       const json = await response.json()
       setData(json)
       setIspending(false)

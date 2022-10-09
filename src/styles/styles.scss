@@ -16,6 +16,17 @@ a{
     text-decoration: none;
 }
 
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #777; 
+    border-radius: 5px;
+  }
+
+
 @import "./home.scss";
 @import "./nav.scss";
 @import "./restaurantDetails.scss";
