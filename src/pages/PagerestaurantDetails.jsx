@@ -13,7 +13,7 @@ const PagerestaurantDetails = () => {
     const [isPending, setIsPendig] = useState(true)
     const [foodDetails,setFood] = useState([]);
     const FetechData = async () => {
-        const response = await fetch(`http://localhost:4000/api/restaurant/${id}`)
+        const response = await fetch(`https://food-delivery-react-js.herokuapp.com/api/restaurant/${id}`)
         const json = await response.json()
         setRestaurant(json)
         setIsPendig(false)
