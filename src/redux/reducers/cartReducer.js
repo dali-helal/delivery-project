@@ -5,9 +5,10 @@ const initialState = {
     idRestaurant: 0,
     Foods: [],
     cartQuantity: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    srcImg:"",
+    nameRestaurant:""
 }
-
 
 const addNewItem = (newFood, existedFood) => {
     if (newFood.id === existedFood.id &&
@@ -36,12 +37,14 @@ export const cartReducer = (state = initialState, action) => {
         case ActionTypes.ADD_FOOD:
             return produce(state, (draftState) => {
                 const food = action.payload;
-
+                draftState.idRestaurant=food.idRestaurant
+                draftState.srcImg=food.srcImg
+                draftState.nameRestaurant=food.nameRestaurant
                 let item = draftState.Foods.find((el) => addNewItem(el, food))
                 if (item) {
                     item.quantity++;
                     draftState.totalPrice = (draftState.totalPrice) + (food.price)
-                    draftState.cartQuantity++
+                    draftState.cartQuantity+=food.quantity
                 }
                 else {
                     let sommeSupplement = 0
@@ -50,8 +53,8 @@ export const cartReducer = (state = initialState, action) => {
                     })
                     food.price += sommeSupplement
                     draftState.Foods.push(food)
-                    draftState.cartQuantity++
-                    draftState.totalPrice = (draftState.totalPrice) + (food.price)
+                    draftState.cartQuantity+=food.quantity
+                    draftState.totalPrice = (draftState.totalPrice) + (food.price*food.quantity)
                 }
 
             });
@@ -64,7 +67,6 @@ export const cartReducer = (state = initialState, action) => {
                         draftState.cartQuantity++;
                         draftState.totalPrice = draftState.totalPrice + food.price
                     }
-                    console.log(food.id)
                 })
 
 
@@ -84,8 +86,27 @@ export const cartReducer = (state = initialState, action) => {
                             draftState.Foods.splice(index, 1)
                         }
                     }
-                })
+                    if(draftState.cartQuantity==0){
+                      draftState.srcImg=""
+                      draftState.nameRestaurant=""
+                      draftState.idRestaurant=0
+                      draftState.totalPrice=0
+                    }
+                }
+               
+                )
             });
+        case ActionTypes.REMOVE_CART:
+            return produce(state,(draftState)=>{
+                // initialState
+                 draftState.Foods=[];
+                  draftState.cartQuantity=0;
+                  draftState.idRestaurant=0
+                  draftState.srcImg=""
+                  draftState.nameRestaurant=""
+                  draftState.totalPrice=0
+                
+            })  ;
         default:
             return state
     }

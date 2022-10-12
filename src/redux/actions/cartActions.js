@@ -18,3 +18,8 @@ export const incrementQuantity = (id) => {
         payload: id
     }
 }
+export const removeCart=()=>{
+    return{
+        type:ActionTypes.REMOVE_CART
+    }
+}

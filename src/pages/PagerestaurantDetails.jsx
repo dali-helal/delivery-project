@@ -6,9 +6,16 @@ import { FaShoppingBasket } from "react-icons/fa"
 import FoodCommand from "../components/FoodCommand";
 import CommandDetails from "../components/CommandDetails"
 import { useSelector } from "react-redux"
+import { FaTimes } from "react-icons/fa"
+import {removeCart} from "../redux/actions/cartActions"
+import { useDispatch } from "react-redux"
 const PagerestaurantDetails = () => {
     const cartQuantity = useSelector((state) => state.cart.cartQuantity)
+    const imgCart=useSelector((state) => state.cart.srcImg)
+    const nameRestaurantCart=useSelector((state) => state.cart.nameRestaurant)
+    const idRestaurant=useSelector((state) => state.cart.idRestaurant)
     const { id } = useParams()
+    const Dispatch=useDispatch()
     const [restaurant, setRestaurant] = useState([])
     const [isPending, setIsPendig] = useState(true)
     const [foodDetails,setFood] = useState([]);
@@ -21,6 +28,22 @@ const PagerestaurantDetails = () => {
     useEffect(() => {
         FetechData()
     }, [])
+     const handleDisplay=()=>{
+        document.querySelector('.popup').classList.remove('display')
+     }
+     const handleRemoveCart=()=>{
+        Dispatch(removeCart())
+        const inputs = Array.from(document.getElementsByTagName("input"));
+        inputs.forEach((input, index) => {
+            if (input.type === "checkbox") {
+                input.checked = false;
+            }
+        })
+        handleDisplay()
+     }
+     const handleClick=()=>{
+        window.href=`/restaurant/${idRestaurant}`
+     }
     return (
         <section className="restaurant-details" >
             <nav className="nav">
@@ -78,17 +101,34 @@ const PagerestaurantDetails = () => {
                         <FaShoppingBasket className="ShoppingBasket" /> </> :
 
                         <div className="cart">
-                            <img src={restaurant.Img} alt="" />
-                            <h3>{restaurant.NameRestaurant}</h3>
+                            <img src={imgCart} alt="" />
+                            <h3>{nameRestaurantCart}</h3>
                             <CommandDetails />
                         </div>
-
                     }
                     
                 </div>
 
             </section>
-            <FoodCommand className="food-command" food={foodDetails} />
+            <div className="popup">
+                 <div className="container-popup">
+                       <div className="header">
+                          <p>Vider le panier </p>
+                          <FaTimes className="Time-header" onClick={handleDisplay}/>
+                       </div>
+                       <div className="message">
+                        <p>Il semble que votre panier contient des articles d'un autre restaurant </p>
+                        <h2>voulez-vous effacer et recommencer </h2>
+                       </div>
+                       <div className="popup-btn">
+                        <a href={`/restaurant/${idRestaurant}`}>
+                        <button className="btn-href" >Non , retourner</button>
+                        </a>
+                        <button onClick={handleRemoveCart}>Oui , recommencer</button>
+                       </div>
+                 </div>
+            </div>
+            <FoodCommand className="food-command" food={foodDetails} idRestaurant={id} srcImg={restaurant.Img} nameRestaurant={restaurant.NameRestaurant} />
         </section>
     )
 }
