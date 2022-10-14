@@ -1,6 +1,6 @@
 import { FaStar } from "react-icons/fa"
 import { useEffect, useState } from "react"
-
+import { Link } from "react-router-dom"
 const Home = () => {
    const [data, setData] = useState([])
    const [isPending, setIspending] = useState(true)
@@ -63,7 +63,7 @@ const Home = () => {
                   {
                      data && data.map((restaurant, index) => {
                         return (
-                           <a href={`/restaurant/${restaurant._id}`} >
+                           <Link to={`/restaurant/${restaurant._id}`}>
                               <div className="conatiner-product">
                                  <img src={restaurant.Img} alt="" />
                                  <p>Delivers in 40 min</p>
@@ -77,7 +77,7 @@ const Home = () => {
                                     <p>{restaurant.Ratings} ratings</p>
                                  </ div>
                               </div>
-                           </a>
+                           </Link>
 
                         )
                      }
@@ -86,7 +86,7 @@ const Home = () => {
                </div>
 
          }
-
+          
       </section>
    )
 }

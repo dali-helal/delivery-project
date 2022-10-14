@@ -14,19 +14,29 @@ const CommandDetails = () => {
             {Foods.map((food, index) => {
                 return (
                     <div className="command-details" key={index}>
+
                         <div className="header">
+                            <div>
                             <h4>{food.nameFood}</h4>
-                            <span><FaMinus color="#777" size={"8px"} onClick={()=>{
+                            <span>
+                            <FaMinus  className="btn" color="#777" size={"8px"} onClick={()=>{
                                 Dispatch(decrementQuantity(food.id))
-                            }} /></span>
+                            }} />
                             <h3>{food.quantity}</h3>
-                            <span><FaPlus color="#777" size={"8px"} onClick={() => {
+                            <FaPlus  className="btn" color="#777" size={"8px"} onClick={() => {
                                 Dispatch(incrementQuantity(food.id));
 
-                            }} /></span>
+                            }}/>
+
+                            </span>
+                            </div>
+
                             <h2>{(food.quantity * food.price).toFixed(3)} TND</h2>
+
                         </div>
-                        <h4>1* {food.priceEl} TND</h4>
+
+                        <h5>1* {food.priceEl} TND</h5>
+
                         <div className="list-pack-base">
                             <h3><span>Pack de base </span> : -sauces aux choix </h3>
                             <div>

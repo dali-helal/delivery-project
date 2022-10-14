@@ -6,10 +6,22 @@ import { useSelector } from "react-redux"
 const FoodCommand = ({ food, idRestaurant, srcImg, nameRestaurant }) => {
 
     const nameRestaurantCart = useSelector((state) => state.cart.nameRestaurant)
-
+ 
+    const setState=()=>{
+        const inputs = Array.from(document.getElementsByTagName("input"));
+        inputs.forEach((input, index) => {
+            if (input.type === "checkbox") {
+                input.checked = false;
+            }
+        })
+        setArray([])
+        setArraySupp([])
+        setQuantityItem(1)
+    }
     const handleDisplay = () => {
         document.querySelector('.food-command').classList.toggle('switch')
         document.querySelector('.alertMessage').classList.remove('open')
+        setState()
     }
     const addAlertMessage = () => {
         document.querySelector('.alertMessage').classList.add('open')
@@ -41,11 +53,6 @@ const FoodCommand = ({ food, idRestaurant, srcImg, nameRestaurant }) => {
     const [supplementArray, setArraySupp] = useState([])
     const [quantityItem, setQuantityItem] = useState(1)
 
-    const handleDecrement = () => {
-
-    }
-
-
     const handleChange = (e) => {
         removeAlertMessage()
         if (e.target.checked) {
@@ -76,15 +83,7 @@ const FoodCommand = ({ food, idRestaurant, srcImg, nameRestaurant }) => {
                     nameRestaurant: nameRestaurant
                 }))
                 handleDisplay()
-                const inputs = Array.from(document.getElementsByTagName("input"));
-                inputs.forEach((input, index) => {
-                    if (input.type === "checkbox") {
-                        input.checked = false;
-                    }
-                })
-                setArray([])
-                setArraySupp([])
-                setQuantityItem(1)
+                setState()
             } else {
                 addAlertMessage()
             }
@@ -103,7 +102,7 @@ const FoodCommand = ({ food, idRestaurant, srcImg, nameRestaurant }) => {
             <div className="container">
                 <div className="header">
                     <p> {food.name} </p>
-                    <FaTimes onClick={handleDisplay} />
+                    <FaTimes className="icon-Time" onClick={handleDisplay} />
                 </div>
                 <div className="mid-container">
                     <h3>PACK DE BASE</h3>
