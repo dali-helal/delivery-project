@@ -55,9 +55,9 @@ nav {
       }
     }
     .container-cart {
+      padding: 1rem 0.25rem;
       position: absolute;
-      height: 65vh;
-      width: 58vh;
+      width: 30%;
       top: 79.5px;
       background: white;
       box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.32);
@@ -70,7 +70,7 @@ nav {
         right: 15px;
       }
       .citation {
-        margin-top: 30%;
+        padding: 4rem;
         p {
           text-align: center;
           margin-top: 0.25rem;
@@ -200,10 +200,11 @@ nav {
             padding-top: 1rem;
           }
           button {
+            width: 100%;
             font-family: "Poppins", sans-serif;
             font-weight: 600;
             font-size: 1.2rem;
-            padding: 0.45rem 4.6vw;
+            padding: 0.45rem 1.6rem;
             border: none;
             background: #ce1126;
             color: white;
