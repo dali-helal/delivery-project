@@ -1,6 +1,7 @@
 .my-account {
 
     nav {
+        position: relative;
         .compte-btn {
             display: flex;
             align-items: center;
@@ -42,9 +43,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 25vh;
+            width: 13%;
             top: 79.5px;
-            left: 84.5vw;
+            left: 84.5%;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.32);
             display: none;
 
