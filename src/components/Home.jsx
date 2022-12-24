@@ -1,12 +1,14 @@
 import { FaStar } from "react-icons/fa"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import {url} from "../api.js"
+
 const Home = () => {
    const [data, setData] = useState([])
    const [isPending, setIspending] = useState(true)
 
    const FetchData = async () => {
-      const response = await fetch(" https://food-delivery-react-js.herokuapp.com/api/restaurant")
+      const response = await fetch(`${url}/api/restaurant`)
       const json = await response.json()
 
       await new Promise(r => setTimeout(r, 750));

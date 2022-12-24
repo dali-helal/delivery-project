@@ -9,6 +9,8 @@ import { useSelector } from "react-redux"
 import { FaTimes } from "react-icons/fa"
 import {removeCart} from "../redux/actions/cartActions"
 import { useDispatch } from "react-redux"
+import {url} from "../api.js"
+
 const PagerestaurantDetails = () => {
     const cartQuantity = useSelector((state) => state.cart.cartQuantity)
     const imgCart=useSelector((state) => state.cart.srcImg)
@@ -19,8 +21,9 @@ const PagerestaurantDetails = () => {
     const [restaurant, setRestaurant] = useState([])
     const [isPending, setIsPendig] = useState(true)
     const [foodDetails,setFood] = useState([]);
+
     const FetechData = async () => {
-        const response = await fetch(`https://food-delivery-react-js.herokuapp.com/api/restaurant/${id}`)
+        const response = await fetch(`${url}/api/restaurant/${id}`)
         const json = await response.json()
         setRestaurant(json)
         setIsPendig(false)
